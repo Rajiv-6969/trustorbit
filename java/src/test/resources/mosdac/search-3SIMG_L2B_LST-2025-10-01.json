@@ -1,0 +1,801 @@
+{
+    "title": "MOSDAC Opensearch Response",
+    "updated": "2026-10-08T12:23:57Z",
+    "author": {
+        "name": "MOSDAC,SAC-ISRO,India",
+        "email": "admin@mosdac.gov.in"
+    },
+    "links": [
+        {
+            "type": "application/opensearchdescription+xml",
+            "href": "https://mosdac.gov.in/apios/osdd.xml",
+            "rel": "search"
+        },
+        {
+            "type": "application/json",
+            "href": "https://mosdac.gov.in/apios/datasets.json?datasetId=3SIMG_L2B_LST",
+            "rel": "self"
+        },
+        {
+            "type": "application/json",
+            "href": "https://mosdac.gov.in/apios/datasets.json?datasetId=3SIMG_L2B_LST",
+            "rel": "up"
+        }
+    ],
+    "startIndex": 1,
+    "itemsPerPage": 100,
+    "totalResults": 45,
+    "totalSizeMB": 462,
+    "message": "Your search yielded following matches",
+    "query": {
+        "role": "request",
+        "name": "3SIMG_L2B_LST"
+    },
+    "entries": [
+        {
+            "identifier": "3SIMG_01OCT2025_2330_L2B_LST_V01R00.h5",
+            "id": "16366520",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T23:30:00Z",
+            "dcDate": "2025-10-01T23:30:00Z/2025-10-02T00:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16366520",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16366520",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_2300_L2B_LST_V01R00.h5",
+            "id": "16366398",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T23:00:00Z",
+            "dcDate": "2025-10-01T23:00:00Z/2025-10-01T23:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16366398",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16366398",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_2230_L2B_LST_V01R00.h5",
+            "id": "16366300",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T22:30:00Z",
+            "dcDate": "2025-10-01T22:30:00Z/2025-10-01T23:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16366300",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16366300",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_2200_L2B_LST_V01R00.h5",
+            "id": "16366210",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T22:00:00Z",
+            "dcDate": "2025-10-01T22:00:00Z/2025-10-01T22:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16366210",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16366210",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_2130_L2B_LST_V01R00.h5",
+            "id": "16366082",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T21:30:00Z",
+            "dcDate": "2025-10-01T21:30:00Z/2025-10-01T22:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16366082",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16366082",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_2100_L2B_LST_V01R00.h5",
+            "id": "16366012",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T21:00:00Z",
+            "dcDate": "2025-10-01T21:00:00Z/2025-10-01T21:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16366012",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16366012",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_2030_L2B_LST_V01R00.h5",
+            "id": "16365724",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T20:30:00Z",
+            "dcDate": "2025-10-01T20:30:00Z/2025-10-01T21:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16365724",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16365724",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_2000_L2B_LST_V01R00.h5",
+            "id": "16365572",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T20:00:00Z",
+            "dcDate": "2025-10-01T20:00:00Z/2025-10-01T20:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16365572",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16365572",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1930_L2B_LST_V01R00.h5",
+            "id": "16365372",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T19:30:00Z",
+            "dcDate": "2025-10-01T19:30:00Z/2025-10-01T20:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16365372",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16365372",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1800_L2B_LST_V01R00.h5",
+            "id": "16364788",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T18:00:00Z",
+            "dcDate": "2025-10-01T18:00:00Z/2025-10-01T18:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16364788",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16364788",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1700_L2B_LST_V01R00.h5",
+            "id": "16364588",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T17:00:00Z",
+            "dcDate": "2025-10-01T17:00:00Z/2025-10-01T17:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16364588",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16364588",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1630_L2B_LST_V01R00.h5",
+            "id": "16364478",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T16:30:00Z",
+            "dcDate": "2025-10-01T16:30:00Z/2025-10-01T17:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16364478",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16364478",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1600_L2B_LST_V01R00.h5",
+            "id": "16364350",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T16:00:00Z",
+            "dcDate": "2025-10-01T16:00:00Z/2025-10-01T16:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16364350",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16364350",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1530_L2B_LST_V01R00.h5",
+            "id": "16364220",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T15:30:00Z",
+            "dcDate": "2025-10-01T15:30:00Z/2025-10-01T16:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16364220",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16364220",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1500_L2B_LST_V01R00.h5",
+            "id": "16364154",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T15:00:00Z",
+            "dcDate": "2025-10-01T15:00:00Z/2025-10-01T15:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16364154",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16364154",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1430_L2B_LST_V01R00.h5",
+            "id": "16364022",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T14:30:00Z",
+            "dcDate": "2025-10-01T14:30:00Z/2025-10-01T15:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16364022",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16364022",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1400_L2B_LST_V01R00.h5",
+            "id": "16363904",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T14:00:00Z",
+            "dcDate": "2025-10-01T14:00:00Z/2025-10-01T14:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16363904",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16363904",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1330_L2B_LST_V01R00.h5",
+            "id": "16363808",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T13:30:00Z",
+            "dcDate": "2025-10-01T13:30:00Z/2025-10-01T14:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16363808",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16363808",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1300_L2B_LST_V01R00.h5",
+            "id": "16363688",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T13:00:00Z",
+            "dcDate": "2025-10-01T13:00:00Z/2025-10-01T13:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16363688",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16363688",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1230_L2B_LST_V01R00.h5",
+            "id": "16363570",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T12:30:00Z",
+            "dcDate": "2025-10-01T12:30:00Z/2025-10-01T13:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16363570",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16363570",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1200_L2B_LST_V01R00.h5",
+            "id": "16363540",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T12:00:00Z",
+            "dcDate": "2025-10-01T12:00:00Z/2025-10-01T12:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16363540",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16363540",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1130_L2B_LST_V01R00.h5",
+            "id": "16363368",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T11:30:00Z",
+            "dcDate": "2025-10-01T11:30:00Z/2025-10-01T12:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16363368",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16363368",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1100_L2B_LST_V01R00.h5",
+            "id": "16363242",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T11:00:00Z",
+            "dcDate": "2025-10-01T11:00:00Z/2025-10-01T11:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16363242",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16363242",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1030_L2B_LST_V01R00.h5",
+            "id": "16363132",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T10:30:00Z",
+            "dcDate": "2025-10-01T10:30:00Z/2025-10-01T11:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16363132",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16363132",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_1000_L2B_LST_V01R00.h5",
+            "id": "16363168",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T10:00:00Z",
+            "dcDate": "2025-10-01T10:00:00Z/2025-10-01T10:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16363168",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16363168",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0930_L2B_LST_V01R00.h5",
+            "id": "16363042",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T09:30:00Z",
+            "dcDate": "2025-10-01T09:30:00Z/2025-10-01T10:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16363042",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16363042",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0900_L2B_LST_V01R00.h5",
+            "id": "16362980",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T09:00:00Z",
+            "dcDate": "2025-10-01T09:00:00Z/2025-10-01T09:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16362980",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16362980",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0830_L2B_LST_V01R00.h5",
+            "id": "16362924",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T08:30:00Z",
+            "dcDate": "2025-10-01T08:30:00Z/2025-10-01T09:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16362924",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16362924",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0800_L2B_LST_V01R00.h5",
+            "id": "16362872",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T08:00:00Z",
+            "dcDate": "2025-10-01T08:00:00Z/2025-10-01T08:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16362872",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16362872",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0730_L2B_LST_V01R00.h5",
+            "id": "16362632",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T07:30:00Z",
+            "dcDate": "2025-10-01T07:30:00Z/2025-10-01T08:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16362632",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16362632",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0700_L2B_LST_V01R00.h5",
+            "id": "16362846",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T07:00:00Z",
+            "dcDate": "2025-10-01T07:00:00Z/2025-10-01T07:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16362846",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16362846",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0630_L2B_LST_V01R00.h5",
+            "id": "16362684",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T06:30:00Z",
+            "dcDate": "2025-10-01T06:30:00Z/2025-10-01T07:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16362684",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16362684",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0600_L2B_LST_V01R00.h5",
+            "id": "16362832",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T06:00:00Z",
+            "dcDate": "2025-10-01T06:00:00Z/2025-10-01T06:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16362832",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16362832",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0530_L2B_LST_V01R00.h5",
+            "id": "16362656",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T05:30:00Z",
+            "dcDate": "2025-10-01T05:30:00Z/2025-10-01T06:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16362656",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16362656",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0500_L2B_LST_V01R00.h5",
+            "id": "16362776",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T05:00:00Z",
+            "dcDate": "2025-10-01T05:00:00Z/2025-10-01T05:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16362776",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16362776",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0430_L2B_LST_V01R00.h5",
+            "id": "16362694",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T04:30:00Z",
+            "dcDate": "2025-10-01T04:30:00Z/2025-10-01T05:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16362694",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16362694",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0400_L2B_LST_V01R00.h5",
+            "id": "16360056",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T04:00:00Z",
+            "dcDate": "2025-10-01T04:00:00Z/2025-10-01T04:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16360056",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16360056",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0330_L2B_LST_V01R00.h5",
+            "id": "16359272",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T03:30:00Z",
+            "dcDate": "2025-10-01T03:30:00Z/2025-10-01T04:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16359272",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16359272",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0300_L2B_LST_V01R00.h5",
+            "id": "16358892",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T03:00:00Z",
+            "dcDate": "2025-10-01T03:00:00Z/2025-10-01T03:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16358892",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16358892",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0230_L2B_LST_V01R00.h5",
+            "id": "16358792",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T02:30:00Z",
+            "dcDate": "2025-10-01T02:30:00Z/2025-10-01T03:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16358792",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16358792",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0200_L2B_LST_V01R00.h5",
+            "id": "16358722",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T02:00:00Z",
+            "dcDate": "2025-10-01T02:00:00Z/2025-10-01T02:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16358722",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16358722",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0130_L2B_LST_V01R00.h5",
+            "id": "16358632",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T01:30:00Z",
+            "dcDate": "2025-10-01T01:30:00Z/2025-10-01T02:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16358632",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16358632",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0100_L2B_LST_V01R00.h5",
+            "id": "16358564",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T01:00:00Z",
+            "dcDate": "2025-10-01T01:00:00Z/2025-10-01T01:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16358564",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16358564",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0030_L2B_LST_V01R00.h5",
+            "id": "16358516",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T00:30:00Z",
+            "dcDate": "2025-10-01T00:30:00Z/2025-10-01T01:00:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16358516",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16358516",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        },
+        {
+            "identifier": "3SIMG_01OCT2025_0000_L2B_LST_V01R00.h5",
+            "id": "16358432",
+            "summary": "Land surface temperature (LST) is a key parameter in the land surface processes. LST is very useful input to various models related to agrometeorology, ecology, hydrology and climate.",
+            "updated": "2025-10-01T00:00:00Z",
+            "dcDate": "2025-10-01T00:00:00Z/2025-10-01T00:30:00Z",
+            "enclosureLink": "https://mosdac.gov.in/uops/?metaid=16358432",
+            "searchLink": "https://mosdac.gov.in/apios/datasets.json?gId=16358432",
+            "boundbox": [
+                {
+                    "west": "0.84",
+                    "south": "-81.04",
+                    "east": "163.15",
+                    "north": "81.04"
+                }
+            ]
+        }
+    ]
+}

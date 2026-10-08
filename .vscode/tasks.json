@@ -1,13 +1,30 @@
 {
   "version": "2.0.0",
   "tasks": [
-    { "label": "db: start PostGIS", "type": "shell", "command": "docker compose up -d db" },
-    { "label": "stack: docker compose up", "type": "shell", "command": "docker compose up --build" },
-    { "label": "backend: run", "type": "shell", "command": "mvn -f backend/pom.xml spring-boot:run", "dependsOn": "db: start PostGIS" },
-    { "label": "backend: verify", "type": "shell", "command": "mvn -f backend/pom.xml verify", "group": "test" },
-    { "label": "backend: format", "type": "shell", "command": "mvn -f backend/pom.xml spotless:apply" },
-    { "label": "frontend: dev", "type": "shell", "command": "npm run dev", "options": { "cwd": "${workspaceFolder}/frontend" } },
-    { "label": "frontend: test", "type": "shell", "command": "npm test", "options": { "cwd": "${workspaceFolder}/frontend" }, "group": "test" },
-    { "label": "data: summarise samples", "type": "shell", "command": "python scripts/fetch-samples/summarize_samples.py" }
+    {
+      "label": "Run pipeline",
+      "type": "shell",
+      "command": "./mvnw -q exec:java -Dexec.args=run",
+      "windows": { "command": ".\\mvnw.cmd -q exec:java -Dexec.args=run" },
+      "options": { "cwd": "${workspaceFolder}/java" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test Java",
+      "type": "shell",
+      "command": "./mvnw verify",
+      "windows": { "command": ".\\mvnw.cmd verify" },
+      "options": { "cwd": "${workspaceFolder}/java" },
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Start website",
+      "type": "shell",
+      "command": "npm install && npm run dev",
+      "options": { "cwd": "${workspaceFolder}/website" },
+      "isBackground": true,
+      "problemMatcher": []
+    }
   ]
 }

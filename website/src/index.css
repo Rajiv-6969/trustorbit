@@ -1,0 +1,36 @@
+:root {
+  color-scheme: dark;
+  --bg: #070b1a;
+  --fg: #e6ebf5;
+  --muted: #9aa6bf;
+  --accent: #8fd8ff;
+  font-family: Inter, Manrope, system-ui, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+.home {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+.home h1 {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+.lede {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+.status {
+  color: var(--accent);
+}
+footer {
+  margin-top: 3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}

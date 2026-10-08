@@ -1,7 +1,8 @@
 * text=auto eol=lf
 *.cmd text eol=crlf
 *.bat text eol=crlf
+mvnw text eol=lf
 *.png binary
 *.jpg binary
 *.pdf binary
-data/samples/** -text
+*.jar binary

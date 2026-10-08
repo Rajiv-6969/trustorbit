@@ -1,25 +1,27 @@
 # Build output
-backend/target/
-frontend/node_modules/
-frontend/dist/
+java/target/
+website/node_modules/
+website/dist/
 node_modules/
-*.class
 
-# Secrets
+# Secrets – never commit
 .env
 .env.*
 !.env.example
+
+# Raw satellite files: large, and MOSDAC does not allow redistributing them.
+# Only our converted, value-added station CSVs in data/isro/ are committed.
+data/raw/
+*.h5
+*.hdf5
+*.nc
+*.tif
+
+# Local database (re-created by the pipeline)
+data/*.db
 
 # IDE / OS
 .idea/
 *.iml
 .DS_Store
 Thumbs.db
-
-# Large raw satellite files: convert to small CSVs under data/isro instead
-*.h5
-*.hdf5
-*.nc
-*.tif
-data/raw/
-scripts/isro-convert/downloads/

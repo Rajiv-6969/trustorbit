@@ -3,18 +3,38 @@
   "configurations": [
     {
       "type": "java",
-      "name": "Debug TrustOrbit backend",
+      "name": "TrustOrbit: run pipeline",
       "request": "launch",
-      "mainClass": "com.trustorbit.TrustOrbitApplication",
-      "projectName": "trustorbit-backend",
-      "envFile": "${workspaceFolder}/.env"
+      "mainClass": "com.trustorbit.Main",
+      "projectName": "trustorbit",
+      "cwd": "${workspaceFolder}/java",
+      "args": "run"
     },
     {
-      "type": "chrome",
-      "name": "Debug frontend (Chrome)",
+      "type": "java",
+      "name": "TrustOrbit: data summary",
       "request": "launch",
-      "url": "http://localhost:5173",
-      "webRoot": "${workspaceFolder}/frontend"
+      "mainClass": "com.trustorbit.Main",
+      "projectName": "trustorbit",
+      "cwd": "${workspaceFolder}/java",
+      "args": "summary"
+    },
+    {
+      "type": "java",
+      "name": "TrustOrbit: custom command…",
+      "request": "launch",
+      "mainClass": "com.trustorbit.Main",
+      "projectName": "trustorbit",
+      "cwd": "${workspaceFolder}/java",
+      "args": "${input:command}"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "command",
+      "type": "promptString",
+      "description": "Command and arguments, e.g. search 2025-10-01 2025-11-30",
+      "default": "help"
     }
   ]
 }
