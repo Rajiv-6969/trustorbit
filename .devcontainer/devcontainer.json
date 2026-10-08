@@ -1,0 +1,28 @@
+{
+  "name": "TrustOrbit",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": { "version": "none", "installMaven": "true" },
+    "ghcr.io/devcontainers/features/node:1": { "version": "22" },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/python:1": { "version": "3.12" }
+  },
+  "forwardPorts": [8080, 5173, 5432],
+  "portsAttributes": {
+    "8080": { "label": "TrustOrbit API" },
+    "5173": { "label": "TrustOrbit UI" },
+    "5432": { "label": "PostGIS" }
+  },
+  "postCreateCommand": "cd frontend && npm ci && cd .. && mvn -q -f backend/pom.xml -DskipTests dependency:go-offline",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-boot-dev-pack",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}

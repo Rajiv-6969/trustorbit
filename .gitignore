@@ -1,0 +1,25 @@
+# Build output
+backend/target/
+frontend/node_modules/
+frontend/dist/
+node_modules/
+*.class
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Large raw satellite files: convert to small CSVs under data/isro instead
+*.h5
+*.hdf5
+*.nc
+*.tif
+data/raw/
+scripts/isro-convert/downloads/

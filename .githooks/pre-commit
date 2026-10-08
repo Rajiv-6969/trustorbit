@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+# TrustOrbit pre-commit: format checks on staged files only.
+# Enable once with:  git config core.hooksPath .githooks
+set -e
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+
+if echo "$staged" | grep -q '^backend/.*\.java$'; then
+  echo "pre-commit: checking Java formatting (fix with: mvn -f backend/pom.xml spotless:apply)"
+  mvn -q -f backend/pom.xml spotless:check
+fi
+
+fe=$(echo "$staged" | grep '^frontend/.*\.\(ts\|tsx\|css\|json\)$' | sed 's#^frontend/##' || true)
+if [ -n "$fe" ]; then
+  echo "pre-commit: prettier + eslint on staged front-end files"
+  (cd frontend && npx --no-install prettier --check $fe && npx --no-install eslint --no-warn-ignored $(echo "$fe" | grep '\.tsx\?$' || true))
+fi
