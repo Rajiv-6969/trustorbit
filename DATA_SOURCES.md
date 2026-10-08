@@ -1,84 +1,87 @@
 # Data sources
 
-All data used by TrustOrbit is free and open. Small **real** samples are committed so the project
-runs without keys or logins. `data/samples/MANIFEST.json` records the exact request URL, fetch
-time (UTC) and SHA-256 of every committed file. Re-download with:
+TrustOrbit currently uses **ISRO data only**. All reading goes through the `DataSource` interface,
+so other sources (e.g. NASA) can be added later without changing the rest of the program.
 
-```bash
-python scripts/fetch-samples/fetch_samples.py            # power, recent, eonet (+ firms if FIRMS_MAP_KEY set)
-python scripts/fetch-samples/summarize_samples.py
-```
+Region: India, 10 stations in [`data/stations.csv`](data/stations.csv) – Bengaluru, Chennai, Delhi,
+Mumbai, Kolkata, Guwahati, Jaipur, Bhopal, Thiruvananthapuram, Leh.
 
-Region: India, 10 sample stations in [`data/stations.csv`](data/stations.csv)
-(Bengaluru, Chennai, Delhi, Mumbai, Kolkata, Guwahati, Jaipur, Bhopal, Thiruvananthapuram, Leh).
+## 1. MOSDAC – Space Applications Centre, ISRO (main source)
 
-## NASA (used live by the back end, samples committed)
+<https://mosdac.gov.in> · checked 2026-10-08
 
-### 1. NASA POWER – Daily point API
-- **Endpoint:** `https://power.larc.nasa.gov/api/temporal/daily/point` (no key). Verified 2026-10-08,
-  API v2.10.0.
-- **Parameters:** `T2M, T2M_MAX, T2M_MIN` (°C), `PRECTOTCORR` (mm/day), `RH2M` (%),
-  `ALLSKY_SFC_SW_DWN` (MJ/m²/day), community `AG`.
-- **Missing data:** the response header declares `fill_value: -999.0`. TrustOrbit treats -999 as
-  *missing*, never as a reading.
-- **Committed files:**
-  - `data/samples/nasa-power/<STATION>.json` – 2023-01-01 → 2024-12-31 (731 days × 6 params × 10
-    stations). Historical, contains no fill values.
-  - `data/samples/nasa-power-recent/<STATION>.json` – last ~120 days up to the fetch date. The
-    newest 3–5 days contain genuine `-999` fill values (near-real-time processing lag) – real gaps
-    for M2 to catch.
-- **Terms / attribution:** "These data were obtained from the NASA Langley Research Center (LaRC)
-  POWER Project funded through the NASA Earth Science/Applied Science Program."
-  <https://power.larc.nasa.gov/docs/referencing/>
+### Products used (IDs verified with the MOSDAC search API)
 
-### 2. NASA FIRMS – active fires (VIIRS S-NPP 375 m)
-- **Live API (needs free MAP_KEY):**
-  `https://firms.modaps.eosdis.nasa.gov/api/area/csv/{MAP_KEY}/VIIRS_SNPP_NRT/{west,south,east,north}/{days}`.
-  Get a key at <https://firms.modaps.eosdis.nasa.gov/api/map_key/> and put it in `.env` as
-  `FIRMS_MAP_KEY` (never commit it).
-- **Committed sample (no key needed):** `data/samples/firms/viirs-snpp-india-2024-subset.csv` –
-  rows copied unchanged from the public country archive
-  `https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp/2024/viirs-snpp_2024_India.csv`,
-  filtered to acquisition dates 2024-04-01..03 and 2024-11-01..07 (24,226 detections; keeps the
-  file under 2 MB).
-- **Quality signals used:** `confidence` (l/n/h), `frp` (fire radiative power, MW), `bright_ti4` (K).
-- **Attribution:** "We acknowledge the use of data and imagery from LANCE FIRMS operated by
-  NASA's Earth Science Data and Information System (ESDIS) with funding provided by NASA
-  Headquarters." <https://www.earthdata.nasa.gov/data/tools/firms>
+| Dataset ID | Satellite | Product | Frequency | What we keep | DOI |
+|---|---|---|---|---|---|
+| `3RIMG_L2B_LST` | INSAT-3DR | Land surface temperature | half-hourly | the 06:15 UTC file each day | [10.19038/SAC/10/3RIMG_L2B_LST](https://doi.org/10.19038/SAC/10/3RIMG_L2B_LST) |
+| `3SIMG_L2B_LST` | INSAT-3DS | Land surface temperature | half-hourly | the 06:00 UTC file each day | [10.19038/SAC/10/3SIMG_L2B_LST](https://doi.org/10.19038/SAC/10/3SIMG_L2B_LST) |
+| `3RIMG_L3B_HEM_DLY` | INSAT-3DR | Daily rainfall (Hydro-Estimator) | daily | every file | [10.19038/SAC/10/3RIMG_L3B_HEM_DLY](https://doi.org/10.19038/SAC/10/3RIMG_L3B_HEM_DLY) |
+| `3SIMG_L3B_HEM_DLY` | INSAT-3DS | Daily rainfall (Hydro-Estimator) | daily | every file | [10.19038/SAC/10/3SIMG_L3B_HEM_DLY](https://doi.org/10.19038/SAC/10/3SIMG_L3B_HEM_DLY) |
 
-### 3. NASA EONET v3 – natural events
-- **Endpoint:** `https://eonet.gsfc.nasa.gov/api/v3/events` (no key). Note the `bbox` order is
-  `minLon,maxLat,maxLon,minLat`.
-- **Committed file:** `data/samples/eonet/events-india-2023-2024.json` – all events (open + closed)
-  in the India bounding box, 2023–2024: 17 events (12 severe storms, 3 wildfires, 2 volcanoes).
-- **Use:** context – an extreme reading near a real event is penalised less ("real event vs bad
-  sensor").
-- **Attribution:** NASA Earth Observatory Natural Event Tracker (EONET). <https://eonet.gsfc.nasa.gov/>
+**Why these:** the same quantity from two satellites enables the cross-satellite check. INSAT-3D
+(the original) returned no data for 2025–2026 searches, so we use the 3DR + 3DS pair. Daily LST
+exists only for INSAT-3DS, so for LST we take one half-hourly file per day from each satellite at
+nearly the same time (06:00 and 06:15 UTC ≈ 11:30–11:45 IST; the 15-minute offset is noted in the
+cross-check). SST (`3RIMG_L3B_SST_DLY`, `3SIMG_L3B_SST_DLY`) is available for a later coastal
+extension.
 
-## ISRO (registration required – not yet downloaded)
+**Study window:** 2025-10-01 to 2025-11-30 (61 days). A `search` on 2026-10-08 found 60 + 60 LST
+files and 54 + 53 rainfall files – about 2.0 GB in total, downloaded once and deleted after
+conversion.
 
-### 4. MOSDAC – Space Applications Centre (INSAT-3D / 3DR / 3DS products)
-- **Status (checked 2026-10-08):** an official download API exists – the Python tool `mdapi`
-  (<https://www.mosdac.gov.in/software/mdapi.zip>, manual at <https://mosdac.gov.in/downloadapi-manual>).
-  **Searching needs no login; downloading needs an approved MOSDAC account**
-  (<https://mosdac.gov.in/signup/>). Dataset IDs are listed at
-  <https://mosdac.gov.in/catalog-app/satellite.php>.
-- **Plan:** a team member registers, downloads a few days of INSAT-3D/3DR Land Surface
-  Temperature for India, and runs `scripts/isro-convert/` to produce small point CSVs in
-  `data/isro/` (columns: source, product, timestamp_utc, lat, lon, value, units). Raw HDF5 files
-  are never committed.
-- **Attribution:** "Data courtesy MOSDAC, Space Applications Centre, ISRO."
+### Access and terms
 
-### 5. Bhoonidhi – NRSC EO data hub
-- <https://bhoonidhi.nrsc.gov.in> (Resourcesat, Cartosat, EOS). Requires registration; documented
-  as future work.
+- **Account:** searching is open; downloading needs a free MOSDAC account (General User).
+- **Download API:** MOSDAC's official Data Download API is available
+  (<https://mosdac.gov.in/downloadapi-manual>). TrustOrbit's `MosdacClient` calls the same
+  endpoints as MOSDAC's `mdapi.py` but fetches only the one time slot per day we need.
+- **Terms** ([MOSDAC Data Dissemination Guidelines](https://mosdac.gov.in/look/DOCS/mosdac-data-guidelines_english.pdf)):
+  - Credit line (mandatory): **"Data Source MOSDAC/SAC/ISRO. https://mosdac.gov.in"**, plus the
+    product DOI.
+  - Downloaded products may **not** be resold or redistributed; value-added products may be
+    distributed. We therefore never commit the raw HDF5 files. We commit only our value-added
+    station extracts (one pixel per station per file, with our quality status) and our scores.
+  - Data are provided "as is" on a best-effort basis.
 
-### 6. Bhuvan – NRSC geoportal
-- A public OGC WMS endpoint responds without login:
-  `https://bhuvan-vec1.nrsc.gov.in/bhuvan/wms?service=WMS&request=GetCapabilities` (verified
-  2026-10-08). Planned as an optional map overlay, attributed "© NRSC/ISRO Bhuvan".
+### How the data in `data/isro/` was obtained
+
+1. **Register (once).** Go to <https://mosdac.gov.in/signup/>. Fill in user name (min 5
+   characters, lower case, first 3 letters alphabetic), a strong password, title, name, email,
+   mobile, organisation (your college), designation (Student), city, country and purpose (e.g.
+   "Academic project: reliability scoring of INSAT-3DR/3DS LST and rainfall"). Accept the
+   agreement, solve the captcha and submit. Confirm the email link. New accounts are approved as
+   General Users.
+2. **Save the login locally.** In the repository root, copy `.env.example` to `.env` and fill in
+   `MOSDAC_USERNAME` and `MOSDAC_PASSWORD`. `.env` is git-ignored.
+3. **Check what will be fetched (no login):**
+   `./mvnw -q exec:java -Dexec.args="search 2025-10-01 2025-11-30"` (in `java/`).
+4. **Download and convert:**
+   `./mvnw -q exec:java -Dexec.args="download 2025-10-01 2025-11-30"`.
+   Each file is downloaded to `data/raw/`, converted to station rows in `data/isro/*.csv`, then
+   deleted. Re-running skips files already converted (useful after MOSDAC's limit of 5,000 files
+   per day or a network drop).
+5. **Manual alternative:** download the same files from the MOSDAC website (Data Access → Order
+   Data) or with `mdapi.py` and its `gId` option, put them in any folder, and run
+   `./mvnw -q exec:java -Dexec.args="convert <folder>"`.
+
+## 2. Bhoonidhi – NRSC, ISRO
+
+<https://bhoonidhi.nrsc.gov.in> – ISRO's Earth-observation data hub (Resourcesat, Cartosat, EOS).
+Requires registration; high-resolution imagery is outside this project's scope. **Future work.**
+
+## 3. Bhuvan – NRSC, ISRO
+
+<https://bhuvan.nrsc.gov.in> – a public OGC WMS endpoint answers without login
+(`https://bhuvan-vec1.nrsc.gov.in/bhuvan/wms?service=WMS&request=GetCapabilities`, checked
+2026-10-08). Planned as an optional website map overlay, credited "© NRSC/ISRO Bhuvan".
+
+## Basemap (website)
+
+CARTO Dark Matter tiles, © OpenStreetMap contributors © CARTO (added in Phase 4).
 
 ## Synthetic data
 
-Any synthetic data (e.g. the evaluation harness that injects noise, gaps and drift) is generated
-in code at test time, clearly labelled **SYNTHETIC**, and never mixed into the real samples.
+Synthetic data appears only in tests (e.g. the tiny NetCDF file built in `IsroFileReaderTest`) and
+in the evaluation command and Reliability Lab scenarios (Phases 3–4). It is always generated in
+code, labelled **SYNTHETIC**, and never mixed into `data/isro/`.

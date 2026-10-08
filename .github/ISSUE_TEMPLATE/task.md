@@ -1,12 +1,12 @@
 ---
 name: Task
-about: A piece of planned work from the timeline
+about: Planned work from the project timeline
 labels: task
 ---
 
 **Module:** M? –
-**Owner:** @
-**Week:**
+**Owner:**
+**Weeks:**
 
 **Goal**
 

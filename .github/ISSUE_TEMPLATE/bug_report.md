@@ -1,12 +1,12 @@
 ---
 name: Bug report
-about: Something is broken ("Houston, we have a problem")
+about: Something does not work as expected
 labels: bug
 ---
 
 **What happened?**
 
-**What did you expect?**
+**What was expected?**
 
 **Steps to reproduce**
 1.
@@ -14,4 +14,4 @@ labels: bug
 
 **Module / page**
 
-**Screenshots or logs**
+**Logs or screenshots**

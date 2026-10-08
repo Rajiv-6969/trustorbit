@@ -1,81 +1,73 @@
 # Contributing to TrustOrbit
 
-Welcome aboard, crew! This guide gets you from zero to your first pull request.
+This guide takes you from a fresh laptop to your first pull request.
 
 ## 1. One-time setup
 
-You need **Git**, **Docker Desktop**, **JDK 21**, **Maven 3.9+**, **Node 22+** and **VS Code**.
-Easiest option: open the repo in VS Code and choose **"Reopen in Container"** (or open it in
-GitHub Codespaces) – the `.devcontainer` installs everything for you.
+Install **Git**, **JDK 21** (e.g. Eclipse Temurin), **Node 22 LTS** and **VS Code**. You do *not*
+need to install Maven – use the wrapper (`./mvnw` or `.\mvnw.cmd`). Alternatively open the repo in
+GitHub Codespaces; the `.devcontainer` sets up JDK + Node for you.
 
 ```bash
 git clone https://github.com/Rajiv-6969/trustorbit.git
 cd trustorbit
-git config core.hooksPath .githooks     # enables the pre-commit format check
-cp .env.example .env                    # optional: add a FIRMS key later
 ```
 
-Install the recommended VS Code extensions when prompted (`.vscode/extensions.json`).
+When VS Code asks, install the recommended extensions (Java pack, ESLint, Prettier).
 
-## 2. Run everything
+## 2. Run things
 
-| What | Command |
-|---|---|
-| Database + API | `docker compose up --build` |
-| Only the database | `docker compose up -d db` |
-| API from source (debuggable) | `mvn -f backend/pom.xml spring-boot:run` or F5 → "Debug TrustOrbit backend" |
-| Front end | `cd frontend && npm install && npm run dev` |
-| Back-end unit tests | `mvn -f backend/pom.xml test` |
-| All back-end tests (needs Docker) | `mvn -f backend/pom.xml verify` |
-| Front-end tests | `cd frontend && npm test` |
-| Sample data summary | `python scripts/fetch-samples/summarize_samples.py` |
+| What | macOS / Linux / Git Bash | Windows PowerShell |
+|---|---|---|
+| Pipeline | `cd java && ./mvnw -q exec:java -Dexec.args="run"` | `cd java; .\mvnw.cmd -q exec:java "-Dexec.args=run"` |
+| Java tests | `./mvnw verify` | `.\mvnw.cmd verify` |
+| Website | `cd website && npm install && npm run dev` | same |
+| Website tests | `npm test` | same |
+
+In VS Code: **Run and Debug → "TrustOrbit: run pipeline"** (breakpoints work), or
+**Terminal → Run Task → "Run pipeline" / "Start website"**.
 
 ## 3. Where your code lives
 
-| Who | Module | Folder |
+| Who | Module | Folder (under `java/src/main/java/com/trustorbit/`) |
 |---|---|---|
-| Akash | Setup, integration, CI | `backend/.../common/`, `.github/`, `docker-compose.yml` |
-| Abhi Rathod | M1 Ingestion | `backend/src/main/java/com/trustorbit/ingestion/` |
-| Sameer Basha | M2 Preprocessing | `backend/src/main/java/com/trustorbit/preprocessing/` |
-| Rajiv Siddharth | M3 Quality engine | `backend/src/main/java/com/trustorbit/quality/` |
-| Saikirantejas GS | M4 Dashboard & reports | `backend/src/main/java/com/trustorbit/dashboard/`, `frontend/` |
+| Akash | `Main`, shared model, CI | `Main.java`, `AppConfig.java`, `model/`, `.github/` |
+| Abhi Rathod | M1 Ingestion | `ingestion/` |
+| Sameer Basha | M2 Preprocessing | `preprocessing/` |
+| Rajiv Siddharth | M3 Quality engine | `quality/` |
+| Saikirantejas GS | M4 Output + website | `output/`, `website/` |
 
-Tests mirror the same packages under `backend/src/test/java/`. Each module folder has a
-`README.md` explaining what it does and why.
+Tests mirror the same packages under `java/src/test/java/`. Each module folder has a `README.md`.
+Tunable numbers (weights, thresholds) live in `java/src/main/resources/config.properties`.
 
 ## 4. Branch → commit → pull request
 
-`main` is protected: nobody pushes to it directly.
+`main` is protected: changes arrive through pull requests with one approving review and green CI.
 
 ```bash
 git switch main && git pull
-git switch -c feat/m2-imputation        # feat/<module>-<topic>, fix/<module>-<topic>
-# ...code...
-mvn -f backend/pom.xml spotless:apply   # auto-format Java
+git switch -c feat/m2-imputation          # feat/<module>-<topic> or fix/<module>-<topic>
+# ...edit, run tests...
 git add -A
 git commit -m "feat(m2): linear interpolation for short gaps"
 git push -u origin feat/m2-imputation
 ```
 
-Then open a pull request on GitHub. Fill in the template, link the issue (`Closes #7`), and
-ask a teammate for review. CI must be green and one approval is required to merge. UI changes
-get an automatic Vercel preview link on the PR.
+Open the pull request on GitHub, fill in the template, link the issue (`Closes #7`) and request a
+review. Website changes get a Vercel preview link on the PR once Vercel is connected.
 
-### Commit messages (Conventional Commits)
-
-`type(scope): short summary` – types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `ci`.
-Scopes: `m1`, `m2`, `m3`, `m4`, `ui`, `infra`, `data`, `docs`.
+**Commit messages** follow Conventional Commits: `type(scope): summary` with types `feat`, `fix`,
+`docs`, `test`, `refactor`, `chore`, `ci` and scopes `m1`–`m4`, `web`, `data`, `docs`.
 
 ## 5. Code style
 
-- Small classes, meaningful names, Javadoc on every public method, no dead code.
-- Java is formatted with **google-java-format** via Spotless; TypeScript with **Prettier** +
-  **ESLint**. VS Code formats on save; the pre-commit hook and CI check it.
-- Unit tests use the **real sample data** in `data/samples/`.
+- Plain Java: small classes, clear names, Javadoc on every public method, no unused code.
+- VS Code formats on save (Google Java style for Java, Prettier for TypeScript).
+- Unit tests use the committed data in `data/`; synthetic test data is always labelled SYNTHETIC.
 
-## 6. Data & secrets rules
+## 6. Data and secrets
 
-- Never commit `.env`, API keys or passwords.
-- Never commit raw satellite files (HDF5/NetCDF/GeoTIFF) or anything > 5 MB – convert to small
-  CSVs under `data/isro/` instead.
+- Your MOSDAC login goes only in `.env` (copy `.env.example`). Never commit `.env`.
+- Never commit raw satellite files (`.h5`, `.nc`) – MOSDAC does not allow redistributing them and
+  they are large. Only our converted station CSVs in `data/isro/` are committed.
 - Every new data file needs an entry in `DATA_SOURCES.md`.

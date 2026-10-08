@@ -1,13 +1,13 @@
-# Alternative host: Netlify (the default is Vercel – see vercel.json)
+# Alternative host: Netlify (the default host is Vercel – see website/vercel.json)
 [build]
-  base = "frontend"
+  base = "website"
   command = "npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "22"
 
-# Single-page app: every unknown path serves index.html
+# Single-page app: unknown paths serve index.html (data/ and reports/ are real files)
 [[redirects]]
   from = "/*"
   to = "/index.html"
