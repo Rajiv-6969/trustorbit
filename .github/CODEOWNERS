@@ -1,0 +1,10 @@
+# Each module folder is reviewed by its owner. Replace placeholders with real
+# GitHub usernames once every teammate has shared theirs.
+*                                                   @Rajiv-6969
+/backend/src/main/java/com/trustorbit/common/       @Rajiv-6969
+/backend/src/main/java/com/trustorbit/ingestion/    @Rajiv-6969
+/backend/src/main/java/com/trustorbit/preprocessing/ @sameerbasha446
+/backend/src/main/java/com/trustorbit/quality/      @Rajiv-6969
+/backend/src/main/java/com/trustorbit/dashboard/    @Rajiv-6969
+/frontend/                                          @Rajiv-6969
+/scripts/isro-convert/                              @Rajiv-6969
